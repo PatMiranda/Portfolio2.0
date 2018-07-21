@@ -80,7 +80,7 @@ p {
 }
 #cover{
     
-    background-image: url("images/concrete-wall-2.png")
+    background-image: url("images/wood.jpg")
 }
 #cover-image{
     width: 70%;
@@ -101,7 +101,7 @@ h4 {
     font-family: 'Fondamento', cursive;
 }
 .page {
-    background-image: url("images/concrete-wall-2.png")
+    background-image: url("images/wood.jpg")
 }
 #resume {
     align-content: center;
