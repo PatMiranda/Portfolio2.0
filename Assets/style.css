@@ -58,13 +58,22 @@ p {
     text-align: center;
     padding-left: 30px;
     font-family: 'Fondamento', cursive;
-    font-size: 30px;
-    color: lightslategray;
+    font-size: 20px;
+    color: whitesmoke;
 }
 #cookbook {
     background-color: black;
+    -webkit-box-shadow:0px 0px 50px 10px #d88245 ;
+    -moz-box-shadow:0px 0px 50px 10px #d88245 ;
+    box-shadow:0px 0px 50px 10px #d88245 ;
+
 }
 #flipbook {
+    width: 800px;
+    height: 500px;
+    padding-bottom: 20px;
+}
+#flipbook .page {
     width: 800px;
     height: 500px;
     padding-bottom: 20px;
@@ -190,4 +199,22 @@ li {
         height: 300px;
         padding-bottom: 20px;
     }
+}
+.contact-image {
+    width: 90%;
+    padding: 20px;
+    align-content: center;
+}
+#name {
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+}
+.contact-info {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: whitesmoke;
+}
+.social{
+    width: 40px;
 }
