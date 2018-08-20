@@ -22,3 +22,4 @@ $(window).ready(function() {
             else if (e.keyCode==39)
                 $('#flipbook').turn('next');
         });
+ 

@@ -34,8 +34,89 @@
                   </ul>
                 </div>
               </nav>
+    <div class="container" id="library">
+        <h1>Authors I Like</h1>
+        <div class="row">
+            <div class="col-md-12">
+                    <form id="book-form">
+                            <label for="input" id="button-add">Add Your Favorite Author</label>
+                            <input type="text" id="subject-input">
+                            <br>
+                    
+                            <input id="add-books" type="submit" value="Add a book">
+                    </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 buttons">
 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="mybooks">
+
+            </div>
+        </div>
+    </div>
+
+   
+   
+    <script type="text/javascript">
+
+
+var authArray = ["Patrick Rothfuss", "Jonathan Maberry", "Peter Clines", "James S.A. Correy"]
+ var auth; 
+
+function makeButton() {
+        console.log(authArray)
+        $(".buttons").empty();
+
+        for (var i = 0; i < authArray.length; i++) {
+            // creates new button and adds class for future reference
+            var button = $("<button class='btn btn-primary'>");
+                button.addClass("newAuthor");
+                button.attr("data-name", authArray[i]);
+                button.text(authArray[i]);
+            $(".buttons").append(button);
+        }
+
+    };
+    makeButton();
+$("#add-books").on("click", function () {
+        event.preventDefault();
+        if ($("#subject-input").val() !== ''){ 
+         var search = $("#subject-input").val().trim()
+         authArray.push(search.toString());
+         console.log(authArray)
+        $("#subject-input").val('')
+        makeButton();
+        }
+   })
+
+$(".newAuthor").on("click", function(){
+    $("mybooks").empty()
+    var auth = $(this).attr("data-name")
+    myUrl = "https://www.goodreads.com/search.xml?q="+auth+"&key=8dI7mtIy0YSCdJ08TWbRMQ"
+
+    $.ajax({
+        url: myUrl,
+        method: "GET"
+      })
+        .then(function(response) {
+          var results = response.data;
+          console.log( results)
+          for (var i = 0; i < results.length; i++) {
+
+              var newDiv = $("<div class='col-md-3'>");
+                
+
+              
+              $("#mybooks").prepend(newDiv);
+          }})
+
+})
+   
     
-    
+    </script>
 </body>
 </html>
